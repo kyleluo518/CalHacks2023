@@ -15,18 +15,13 @@ def sidebar_header() -> rx.Component:
     return rx.hstack(
         # The logo.
         rx.image(
-            src="/icon.svg",
-            height="2em",
+            src="/icon.png",
+            height="5em",
         ),
         rx.spacer(),
         # Link to Reflex GitHub repo.
         rx.link(
             rx.center(
-                rx.image(
-                    src="/github.svg",
-                    height="3em",
-                    padding="0.5em",
-                ),
                 box_shadow=styles.box_shadow,
                 bg="transparent",
                 border_radius=styles.border_radius,
@@ -34,7 +29,7 @@ def sidebar_header() -> rx.Component:
                     "bg": styles.accent_color,
                 },
             ),
-            href="https://github.com/reflex-dev/reflex",
+            href="https://github.com/kyleluo518/CalHacks2023",
         ),
         width="100%",
         border_bottom=styles.border,
@@ -64,7 +59,7 @@ def sidebar_footer() -> rx.Component:
     )
 
 
-def sidebar_item(text: str, icon: str, url: str) -> rx.Component:
+def sidebar_item(text: str, url: str) -> rx.Component:
     """Sidebar item.
 
     Args:
@@ -82,11 +77,6 @@ def sidebar_item(text: str, icon: str, url: str) -> rx.Component:
 
     return rx.link(
         rx.hstack(
-            rx.image(
-                src=icon,
-                height="2.5em",
-                padding="0.5em",
-            ),
             rx.text(
                 text,
             ),
@@ -126,7 +116,6 @@ def sidebar() -> rx.Component:
                 *[
                     sidebar_item(
                         text=page.get("title", page["route"].strip("/").capitalize()),
-                        icon=page.get("image", "/github.svg"),
                         url=page["route"],
                     )
                     for page in get_decorated_pages()
@@ -136,8 +125,6 @@ def sidebar() -> rx.Component:
                 align_items="flex-start",
                 padding="1em",
             ),
-            rx.spacer(),
-            sidebar_footer(),
             height="100dvh",
         ),
         display=["none", "none", "block"],

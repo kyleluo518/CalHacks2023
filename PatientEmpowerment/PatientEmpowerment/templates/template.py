@@ -47,10 +47,10 @@ def menu_button() -> rx.Component:
                 ],
                 rx.menu_divider(),
                 rx.menu_item(
-                    rx.link("About", href="https://github.com/reflex-dev", width="100%")
+                    rx.link("About", href="https://cal-hacks-10.devpost.com", width="100%")
                 ),
                 rx.menu_item(
-                    rx.link("Contact", href="mailto:founders@=reflex.dev", width="100%")
+                    rx.link("Contact", href="mailto:varshini@gmail.com", width="100%")
                 ),
             ),
         ),

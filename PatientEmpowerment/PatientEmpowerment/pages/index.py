@@ -13,6 +13,8 @@ def index() -> rx.Component:
     Returns:
         The UI for the home page.
     """
-    with open("README.md", encoding="utf-8") as readme:
-        content = readme.read()
-    return rx.markdown(content, component_map=styles.markdown_style)
+    return rx.box(
+        rx.heading("Hi, we are Patient Empowerment!"),
+        rx.text("Metrics:"),
+        rx.image(src="/segmodel_explanation.png", height="30em")
+    )
