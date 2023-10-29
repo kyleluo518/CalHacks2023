@@ -1,3 +1,3 @@
-from .dashboard import dashboard
+from .register import register
 from .index import index
-from .settings import settings
+from .matches import matches

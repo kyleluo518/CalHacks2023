@@ -1,12 +1,12 @@
 """The settings page."""
 
-from CalHacks2023.templates import template
+from PatientEmpowerment.templates import template
 
 import reflex as rx
 
 
-@template(route="/settings", title="Settings")
-def settings() -> rx.Component:
+@template(route="/matches", title="Matches")
+def matches() -> rx.Component:
     """The settings page.
 
     Returns:
